@@ -77,6 +77,10 @@
 			"revisionTime": "2019-04-25T10:00:26Z"
 		},
 		{
+			"path": "golang.org/x/net/html",
+			"revision": ""
+		},
+		{
 			"path": "golang.org/x/sys/unix",
 			"revision": ""
 		},
@@ -87,11 +91,17 @@
 			"revisionTime": "2017-07-30T05:02:35Z"
 		},
 		{
+			"checksumSHA1": "gY2M/3SCxqgrPz+P/N6JQ+m/wnA=",
+			"path": "gopkg.in/xmlpath.v2",
+			"revision": "860cbeca3ebcc600db0b213c0e83ad6ce91f5739",
+			"revisionTime": "2015-08-20T20:48:37Z"
+		},
+		{
 			"checksumSHA1": "oNqPrS2edE8peI3ah2INe379k8E=",
 			"path": "gopkg.in/yaml.v2",
 			"revision": "51d6538a90f86fe93ac480b35f37b2be17fef232",
 			"revisionTime": "2018-11-15T11:05:04Z"
 		}
 	],
-	"rootPath": "yspider"
+	"rootPath": "yespider-go"
 }

@@ -1,8 +1,8 @@
 package spiders
 
 import (
-	"github.com/go.uuid"
-	"yspider/spider/parsers"
+	uuid "github.com/satori/go.uuid"
+	"yespider-go/spider/parsers"
 )
 
 type BaseSpider struct {

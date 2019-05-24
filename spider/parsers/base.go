@@ -2,7 +2,7 @@ package parsers
 
 import (
 	"fmt"
-	"github.com/xmlpath"
+	"gopkg.in/xmlpath.v2"
 	"log"
 	"net/http"
 	"strings"
