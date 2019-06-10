@@ -47,4 +47,5 @@ func (s *BaseSpider) DealTask() {
 		}{Url: s.StartUrl, Xpath: s.IndexXpath},
 	}
 	parser.ParseIndex()
+	parser.ParserArticle()
 }

@@ -71,7 +71,7 @@ func (p *BaseParser) ParserArticle() {
 				fmt.Print(articleString)
 			}
 		}
-		resp.Body.Close()
+		_ = resp.Body.Close()
 		fmt.Print(xUrl)
 	}
 }

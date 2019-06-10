@@ -9,36 +9,36 @@
 			"revisionTime": "2019-03-01T06:25:29Z"
 		},
 		{
-			"checksumSHA1": "SonoRXHraX3KMAr9B+feSteRyhU=",
+			"checksumSHA1": "cpELhz30Sco7IBwvI6FyuShnjnQ=",
 			"path": "github.com/gin-gonic/gin",
-			"revision": "b869fe1415e4b9eb52f247441830d502aece2d4d",
-			"revisionTime": "2018-08-14T08:58:52Z",
-			"version": "v1.3",
-			"versionExact": "v1.3.0"
+			"revision": "d459835d2b077e44f7c9b453505ee29881d5d12d",
+			"revisionTime": "2017-07-02T09:28:26Z",
+			"version": "v1.2",
+			"versionExact": "v1.2"
 		},
 		{
-			"checksumSHA1": "7NcNHPRI7I8XPF+abQTFcrSnKO8=",
+			"checksumSHA1": "YVt5lqmGq95m5tFdiz5pr2BF1Jo=",
 			"path": "github.com/gin-gonic/gin/binding",
-			"revision": "b869fe1415e4b9eb52f247441830d502aece2d4d",
-			"revisionTime": "2018-08-14T08:58:52Z",
-			"version": "v1.3",
-			"versionExact": "v1.3.0"
+			"revision": "d459835d2b077e44f7c9b453505ee29881d5d12d",
+			"revisionTime": "2017-07-02T09:28:26Z",
+			"version": "v1.2",
+			"versionExact": "v1.2"
 		},
 		{
 			"checksumSHA1": "ZrBlc4nW5joRSLLRThHlxU+bWtg=",
 			"path": "github.com/gin-gonic/gin/json",
 			"revision": "b869fe1415e4b9eb52f247441830d502aece2d4d",
 			"revisionTime": "2018-08-14T08:58:52Z",
-			"version": "v1.3",
-			"versionExact": "v1.3.0"
+			"version": "v1.2",
+			"versionExact": "v1.2"
 		},
 		{
-			"checksumSHA1": "RgbalKdjK7vKU7cHbi0QBa6vXJA=",
+			"checksumSHA1": "M3FwiqpVbXwo9t2FyI5/gKxCDKY=",
 			"path": "github.com/gin-gonic/gin/render",
-			"revision": "b869fe1415e4b9eb52f247441830d502aece2d4d",
-			"revisionTime": "2018-08-14T08:58:52Z",
-			"version": "v1.3",
-			"versionExact": "v1.3.0"
+			"revision": "d459835d2b077e44f7c9b453505ee29881d5d12d",
+			"revisionTime": "2017-07-02T09:28:26Z",
+			"version": "v1.2",
+			"versionExact": "v1.2"
 		},
 		{
 			"checksumSHA1": "Wp97rIwFg54dNwuCeR9Vslaehtw=",
@@ -75,6 +75,10 @@
 			"path": "github.com/ugorji/go/codec",
 			"revision": "1d7ab5c50b36701116070c4c612259f93c262367",
 			"revisionTime": "2019-04-25T10:00:26Z"
+		},
+		{
+			"path": "golang.org/x/net",
+			"revision": ""
 		},
 		{
 			"path": "golang.org/x/net/html",
