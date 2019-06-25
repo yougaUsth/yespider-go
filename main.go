@@ -10,12 +10,10 @@ import (
 	"yespider-go/www/controller"
 )
 
-
-func init(){
+func init() {
 	// Init config
 	settings.Setup()
 }
-
 
 func main() {
 	gin.SetMode(settings.ServerSettings.RunMode)
@@ -24,16 +22,17 @@ func main() {
 
 	HttpPort := fmt.Sprintf(":%v", settings.ServerSettings.HttpPort)
 	server := &http.Server{
-		Addr: HttpPort,
-		Handler:routersHandler,
-		ReadTimeout: settings.ServerSettings.ReadTimeout * time.Second,
+		Addr:         HttpPort,
+		Handler:      routersHandler,
+		ReadTimeout:  settings.ServerSettings.ReadTimeout * time.Second,
 		WriteTimeout: settings.ServerSettings.WriteTimeout * time.Second,
 	}
 
 	err := server.ListenAndServe()
-
-	if err != nil{
+	if err != nil {
 		log.Fatalf("Server error : %v", err)
 	}
+
 	fmt.Print("Server listen to ", HttpPort)
+
 }

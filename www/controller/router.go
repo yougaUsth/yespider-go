@@ -12,15 +12,16 @@ func InitRouter() *gin.Engine {
 	r.Use(gin.Recovery())
 
 	r.GET("/index", func(context *gin.Context) {
-		context.JSON(200, gin.H{"msg":"success!"})
+		context.JSON(200, gin.H{"msg": "success!"})
 	})
 
 	apiv1 := r.Group("/api/v1")
 	//apiv1.Use(jwt.JWT())
 
 	{
-		apiv1.GET("/tags",api.GetTags)
-			apiv1.POST("/tags", api.PostTags)
+		apiv1.GET("/tags", api.GetTags)
+		apiv1.POST("/tags", api.PostTags)
+		apiv1.GET("/task", api.GetTaskInfo)
 	}
 
 	return r

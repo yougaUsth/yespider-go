@@ -8,19 +8,17 @@ import (
 
 const confFilePath = "conf/app.ini"
 
-
 type App struct {
 }
 
 type Server struct {
-	RunMode string
-	HttpPort  string
+	RunMode      string
+	HttpPort     string
 	ReadTimeout  time.Duration
 	WriteTimeout time.Duration
 }
 
 type Database struct {
-
 }
 
 type Redis struct {
@@ -35,7 +33,6 @@ var RedisSettings = &Redis{}
 
 var conf *ini.File
 
-
 func Setup() {
 	var err error
 	conf, err = ini.Load(confFilePath)
@@ -47,7 +44,6 @@ func Setup() {
 	mapTo("server", ServerSettings)
 	mapTo("database", DatabaseSettings)
 	mapTo("redis", RedisSettings)
-
 
 }
 

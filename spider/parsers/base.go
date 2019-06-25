@@ -2,26 +2,33 @@ package parsers
 
 import (
 	"fmt"
+	"github.com/gocolly/colly"
 	"gopkg.in/xmlpath.v2"
 	"log"
 	"net/http"
 	"strings"
+	"time"
 )
 
-type Response struct {
+// DOM树索引配置
+type IndexResp struct {
 	Url   string
 	Xpath string
 }
 
-type BaseParser struct {
-	IndexResp    Response
-	ArticleXpath []Response
-	ToDoList     []string
+//DOM结构配置
+type ArticleResp struct {
+	Name  string
+	Xpath string
 }
 
-/**
-解析索引url
-*/
+type BaseParser struct {
+	IndexResp   IndexResp
+	ArticleList []ArticleResp
+	ToDoList    []string
+}
+
+//解析索引URL
 func (p *BaseParser) ParseIndex() {
 	resp, err := http.Get(p.IndexResp.Url)
 
@@ -45,7 +52,7 @@ func (p *BaseParser) ParseIndex() {
 		//TODO: 需要解决相对路径的拼接问题
 		if strings.HasPrefix(xUrl, "http") {
 			todoUrls = append(todoUrls, xUrl)
-			fmt.Println(xUrl)
+			//fmt.Println(xUrl)
 		}
 	}
 	p.ToDoList = todoUrls
@@ -57,21 +64,28 @@ func (p *BaseParser) ParseIndex() {
 */
 func (p *BaseParser) ParserArticle() {
 	for _, xUrl := range p.ToDoList {
-		resp, err := http.Get(xUrl)
-		if err != nil {
-			fmt.Print(err)
-		}
-		root, _ := xmlpath.Parse(resp.Body)
-		for _, article := range p.ArticleXpath {
-			path := xmlpath.MustCompile(article.Xpath)
-			iter := path.Iter(root)
-			//iter := path.Iter()
-			for iter.Next() {
-				articleString := iter.Node().String()
-				fmt.Print(articleString)
+		go func() {
+			// 解析Article 详细配置
+			for _, articleConf := range p.ArticleList {
+				c := colly.NewCollector(colly.MaxDepth(1))
+
+				//TODO: Article parser
+				c.OnHTML(articleConf.Xpath, func(element *colly.HTMLElement) {
+					articleText := element.Text
+					fmt.Print(articleText)
+				})
+
+				c.OnRequest(func(request *colly.Request) {
+					fmt.Println("Visiting", xUrl)
+				})
+
+				err := c.Visit(xUrl)
+				if err != nil {
+					//log.Fatalf("Raise a exception when visit %v", err)
+					fmt.Printf("Raise a exception when visit %v", err)
+				}
 			}
-		}
-		_ = resp.Body.Close()
-		fmt.Print(xUrl)
+		}()
+		time.Sleep(5 * time.Second)
 	}
 }
