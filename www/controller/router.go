@@ -19,8 +19,6 @@ func InitRouter() *gin.Engine {
 	//apiv1.Use(jwt.JWT())
 
 	{
-		apiv1.GET("/tags", api.GetTags)
-		apiv1.POST("/tags", api.PostTags)
 		apiv1.GET("/task", api.GetTaskInfo)
 	}
 
